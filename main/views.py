@@ -8,13 +8,15 @@ from django.template.defaultfilters import first
 def index(request):
     context = {
         'title': 'Home',
-        'content': 'Главная стриница проекта - HOME',
-        'list': ['first','second'],
-        'dict': {'first': 1},
-        'is_authenticated': False
+        'content': 'Магазин мебели HOME',
     }
 
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+'title': 'О нас',
+        'content': 'О нас',
+        'text_on_page': 'Текст о там какие мы крутые прогеры)))))))))'
+    }
+    return render(request, 'main/about.html', context)
